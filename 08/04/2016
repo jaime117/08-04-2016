@@ -1,0 +1,23 @@
+######## funcion de autocorrelacion
+######## la correlacion mide la correlacion entre dos variables, separadas por k periodos
+######## propiedades autocorrelacion
+######## P0= 1 (ro)
+######## -1<= P0<=1
+########simetria Pj=Pj-1
+
+install.packages("fpp")
+require (fpp)
+Acf (beer) ###funcion para conocer la autocorrelacion de los datos
+xx<-Acf (beer, main = "ACF of quuaterly beer production")
+
+names (xx)
+xx$acf
+
+################################ netflix ################################
+nflix<- read.csv("C:\\Users\\SALA-C\\Desktop\\table.csv",header = T)
+nflixts<-ts(nflix [,5],start = 2015, frequency = 12)
+
+plot.ts (nflixts)
+Acf(nflixts)
+nflixts1<-Acf (nflixts,main="ACF of quarterly netflix actions")
+nflixts1$acf
